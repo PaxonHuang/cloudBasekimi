@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>校园跑腿 - 首页</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    .bg-campus {
+      background-image: linear-gradient(to bottom, #f0f9ff, #e0f2fe);
+    }
+    .card-shadow {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+  </style>
+</head>
+<body class="bg-campus min-h-screen">
+  <div class="container mx-auto px-4 py-6">
+    <!-- 顶部导航 -->
+    <header class="flex justify-between items-center mb-8">
+      <h1 class="text-2xl font-bold text-blue-800">
+        <i class="fas fa-running mr-2"></i>校园跑腿
+      </h1>
+      <div class="flex space-x-4">
+        <button class="text-blue-600">
+          <i class="fas fa-bell text-xl"></i>
+        </button>
+        <button class="text-blue-600">
+          <i class="fas fa-user-circle text-xl"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- 快速下单区域 -->
+    <section class="mb-8">
+      <div class="bg-white rounded-2xl p-6 card-shadow">
+        <h2 class="text-xl font-semibold mb-4 text-gray-800">快速下单</h2>
+        <div class="grid grid-cols-2 gap-4">
+          <button class="bg-blue-100 text-blue-800 py-3 px-4 rounded-xl flex items-center">
+            <i class="fas fa-utensils mr-2"></i>外卖代取
+          </button>
+          <button class="bg-green-100 text-green-800 py-3 px-4 rounded-xl flex items-center">
+            <i class="fas fa-file-alt mr-2"></i>文件代送
+          </button>
+          <button class="bg-yellow-100 text-yellow-800 py-3 px-4 rounded-xl flex items-center">
+            <i class="fas fa-shopping-bag mr-2"></i>快递代取
+          </button>
+          <button class="bg-purple-100 text-purple-800 py-3 px-4 rounded-xl flex items-center">
+            <i class="fas fa-question-circle mr-2"></i>其他帮助
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 进行中订单 -->
+    <section class="mb-8">
+      <div class="bg-white rounded-2xl p-6 card-shadow">
+        <div class="flex justify-between items-center mb-4">
+          <h2 class="text-xl font-semibold text-gray-800">进行中订单</h2>
+          <a href="#" class="text-blue-600 text-sm">查看全部</a>
+        </div>
+        <div class="space-y-4">
+          <div class="border-b pb-4">
+            <div class="flex justify-between mb-2">
+              <span class="font-medium">外卖代取 - 食堂3楼</span>
+              <span class="text-green-600">¥5.00</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-2">取餐号: A12 | 送到: 3号楼201</p>
+            <div class="flex justify-between items-center">
+              <span class="text-yellow-500 text-sm">等待接单</span>
+              <button class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm">取消</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 跑腿接单入口 -->
+    <button class="w-full bg-blue-600 text-white py-3 rounded-xl font-medium mb-4">
+      成为跑腿员，立即赚钱
+    </button>
+  </div>
+
+  <!-- 底部导航 -->
+  <nav class="fixed bottom-0 left-0 right-0 bg-white border-t flex justify-around py-3">
+    <a href="#" class="text-blue-600 flex flex-col items-center">
+      <i class="fas fa-home text-xl"></i>
+      <span class="text-xs mt-1">首页</span>
+    </a>
+    <a href="#" class="text-gray-500 flex flex-col items-center">
+      <i class="fas fa-list text-xl"></i>
+      <span class="text-xs mt-1">订单</span>
+    </a>
+    <a href="#" class="text-gray-500 flex flex-col items-center">
+      <i class="fas fa-plus-circle text-xl"></i>
+      <span class="text-xs mt-1">发布</span>
+    </a>
+    <a href="#" class="text-gray-500 flex flex-col items-center">
+      <i class="fas fa-user text-xl"></i>
+      <span class="text-xs mt-1">我的</span>
+    </a>
+  </nav>
+
+  <script>
+    // 模拟订单数据
+    const orders = [
+      {
+        id: 1,
+        type: '外卖代取',
+        location: '食堂3楼',
+        price: 5.00,
+        code: 'A12',
+        destination: '3号楼201',
+        status: '等待接单'
+      }
+    ];
+
+    // 点击快速下单按钮
+    document.querySelectorAll('.grid button').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const type = this.textContent.trim();
+        alert(`即将跳转到${type}下单页面`);
+      });
+    });
+  </script>
+</body>
+</html>
+  

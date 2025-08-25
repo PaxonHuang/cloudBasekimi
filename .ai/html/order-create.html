@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>创建订单 - 校园跑腿</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    .bg-campus {
+      background-image: linear-gradient(to bottom, #f0f9ff, #e0f2fe);
+    }
+  </style>
+</head>
+<body class="bg-campus min-h-screen">
+  <div class="container mx-auto px-4 py-6">
+    <!-- 顶部导航 -->
+    <header class="flex items-center mb-8">
+      <button class="mr-4 text-blue-600">
+        <i class="fas fa-arrow-left text-xl"></i>
+      </button>
+      <h1 class="text-xl font-bold text-blue-800">创建外卖代取订单</h1>
+    </header>
+
+    <!-- 订单表单 -->
+    <form class="bg-white rounded-2xl p-6 shadow-sm mb-6">
+      <div class="mb-6">
+        <label class="block text-gray-700 mb-2 font-medium">取餐地点</label>
+        <div class="relative">
+          <select class="w-full p-3 border rounded-lg appearance-none">
+            <option>食堂1楼</option>
+            <option>食堂2楼</option>
+            <option selected>食堂3楼</option>
+            <option>校外美食街</option>
+          </select>
+          <i class="fas fa-chevron-down absolute right-3 top-4 text-gray-400"></i>
+        </div>
+      </div>
+
+      <div class="mb-6">
+        <label class="block text-gray-700 mb-2 font-medium">取餐号/店铺名</label>
+        <input type="text" placeholder="例如: A12 或 重庆小面" 
+               class="w-full p-3 border rounded-lg">
+      </div>
+
+      <div class="mb-6">
+        <label class="block text-gray-700 mb-2 font-medium">送达地点</label>
+        <div class="relative">
+          <select class="w-full p-3 border rounded-lg appearance-none">
+            <option>1号楼</option>
+            <option>2号楼</option>
+            <option selected>3号楼</option>
+            <option>4号楼</option>
+          </select>
+          <i class="fas fa-chevron-down absolute right-3 top-4 text-gray-400"></i>
+        </div>
+      </div>
+
+      <div class="mb-6">
+        <label class="block text-gray-700 mb-2 font-medium">详细地址</label>
+        <input type="text" placeholder="例如: 201室" 
+               class="w-full p-3 border rounded-lg">
+      </div>
+
+      <div class="mb-6">
+        <label class="block text-gray-700 mb-2 font-medium">备注信息</label>
+        <textarea placeholder="可填写特殊要求" 
+                 class="w-full p-3 border rounded-lg h-20"></textarea>
+      </div>
+
+      <div class="mb-6">
+        <label class="block text-gray-700 mb-2 font-medium">悬赏金额</label>
+        <div class="flex items-center">
+          <span class="text-xl mr-2">¥</span>
+          <input type="number" value="5.00" 
+                 class="w-full p-3 border rounded-lg text-xl font-bold">
+        </div>
+      </div>
+    </form>
+
+    <button class="w-full bg-blue-600 text-white py-3 rounded-xl font-medium text-lg">
+      确认下单
+    </button>
+  </div>
+
+  <script>
+    // 返回按钮功能
+    document.querySelector('header button').addEventListener('click', function() {
+      window.history.back();
+    });
+
+    // 表单提交
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('订单创建成功！');
+    });
+  </script>
+</body>
+</html>
+  
